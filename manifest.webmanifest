@@ -1,0 +1,6 @@
+{
+  "background_color": "yellow",
+  "display": "fullscreen",
+  "name": "miniYoutube",
+  "start_url": "/pwa/"
+}

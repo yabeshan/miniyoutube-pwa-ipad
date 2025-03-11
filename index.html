@@ -45,6 +45,7 @@
         width: 2000px;
       }
     </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   </head>
   <body>
     <div class="header">12345 6789</div>
@@ -132,8 +133,10 @@
       window.onload = function(){
         // alert('onload')
         // document.body.scrollTop = 100;
-        window.focus();
-        window.scrollTo(100, 150)
+        // window.focus();
+        // window.scrollTo(100, 150)
+        // $('body').scrollTo(200);
+        $('html, body').animate({scrollTop: 200}, 1000);
       };
       
 

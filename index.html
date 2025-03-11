@@ -70,18 +70,17 @@
         }
       ]
 
-      function makeButtons(arr) {
-        arr.forEach( item => {
-          const link = "navigateToURL('"+ item.url +"')"
-          const child = document.createElement("INPUT");
-          child.setAttribute( "type", "button" );
-          child.setAttribute( "onclick", link );
-          child.setAttribute( "value", item.name );
-          document.getElementById("buttonHolder").appendChild(child);
-        })
-      }
-
-      makeButtons(configButtons)
+      // function makeButtons(arr) {
+      //   arr.forEach( item => {
+      //     const link = "navigateToURL('"+ item.url +"')"
+      //     const child = document.createElement("INPUT");
+      //     child.setAttribute( "type", "button" );
+      //     child.setAttribute( "onclick", link );
+      //     child.setAttribute( "value", item.name );
+      //     document.getElementById("buttonHolder").appendChild(child);
+      //   })
+      // }
+      // makeButtons(configButtons)
 
       function parseInput() {
         const url = document.getElementById("userLink").value
@@ -99,7 +98,7 @@
       }
 
       function changeZoom(val) {
-        // document.body.style.zoom = val
+        document.body.style.zoom = val
         // if (val=="150%") {
         //   changeScroll(250)
         // } else if (val=="200%") {
@@ -108,7 +107,7 @@
       }
 
       window.onload = function(){
-        // changeZoom("200%")
+        changeZoom("200%")
       };
       
     </script>

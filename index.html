@@ -39,10 +39,10 @@
   </head>
   <body>
     <div class="header"></div>
-    <div>
+    <!-- <div>
       <button onclick="changeZoom('150%')">z1</button>
       <button onclick="changeZoom('200%')">z2</button>
-    </div>
+    </div> -->
 
     <iframe id="playerFrame" src="" ></iframe>
     <input id="userLink" type="text" />
@@ -107,7 +107,7 @@
       }
 
       function navigateToURL(url) {
-        document.getElementById("playerFrame").src = url+"?controls=1&enablejsapi=1&disablekb=0";
+        document.getElementById("playerFrame").src = url+"?controls=1&enablejsapi=1&disablekb=0&fs=1";
       }
       
       function changeScroll(val) {
@@ -115,8 +115,7 @@
       }
 
       function changeZoom(val) {
-        alert('zoom = ' + document.body.style.zoom )
-        // document.body.style.zoom = val
+        document.body.style.zoom = val
         // if (val=="150%") {
         //   changeScroll(250)
         // } else if (val=="200%") {

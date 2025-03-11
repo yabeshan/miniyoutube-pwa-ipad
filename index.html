@@ -37,8 +37,8 @@
   <body>
     <div class="header">12345 6789</div>
     <div>
-      <!-- <button onclick="changeZoom('100%')">z1</button>
-      <button onclick="changeZoom('200%')">z2</button> -->
+      <button onclick="changeZoom('100%')">z1</button>
+      <button onclick="changeZoom('200%')">z2</button>
     </div>
 
     <iframe id="playerFrame" src="" ></iframe>
@@ -88,15 +88,6 @@
         navigateToURL("https://www.youtube.com/embed/"+ url.split('v=')[1])
       }
 
-      const changeZoom = (val) => {
-        document.body.style.zoom = val
-        if (val=="100%") {
-          window.scrollTo(0, 100)
-        } else if (val=="200%") {
-          window.scrollTo(20, 170)
-        }
-      }
-
       makeButtons(configButtons)
       */
       
@@ -117,6 +108,16 @@
       }
       */
       
+
+      const changeZoom = (val) => {
+        document.body.style.zoom = val
+        if (val=="100%") {
+          // window.scrollTo(0, 100)
+        } else if (val=="200%") {
+          // window.scrollTo(20, 170)
+        }
+      }
+
       window.onload = function(){
         // alert('onload')
         // document.body.scrollTop = 100;

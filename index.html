@@ -2,10 +2,103 @@
   <head>
     <link rel="manifest" href="manifest.webmanifest" />
     <title>Title page</title>
+    <style>
+      body {
+        background-color: #666666;
+      }
+      input {
+        color: black; 
+        width: 100%; 
+        text-align: 'right'; 
+        padding: 3px; 
+        margin:3px;
+      }
+      .header {
+        height: 100px;
+      }
+      #playerFrame {
+        border: 10px solid green;
+        width: 640px;
+        height: 390px;
+      }
+      #userLink {
+        width: 500px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .footer {
+        height: 2000px; 
+        width: 2000px;
+      }
+    </style>
   </head>
   <body>
-    <h1>TITLE</h1>
-    <B>Text</B>
-    <iframe id="player" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/d-VKYF4Zow0?enablejsapi=1&origin=http://example.com" frameborder="0"></iframe>
+    <div class="header"></div>
+    <div>
+      <button onclick="changeZoom('100%')">z1</button>
+      <button onclick="changeZoom('200%')">z2</button>
+    </div>
+
+    <iframe id="playerFrame" src="" ></iframe>
+    <input id="userLink" type="text" />
+    <button onclick="parseInput()">GO</button>
+    
+    <div id="buttonHolder"></div>
+    <div class="footer"></div>
+
+    <script>
+      const configButtons = [{
+          url:"https://www.youtube.com/embed/d-VKYF4Zow0", 
+          name:"Build and Deploy a RAG Chatbot with JavaScript, LangChain.js, Next.js, Vercel, OpenAI"
+        },{
+          url:"https://www.youtube.com/embed/b-JFDTZ5e1U", 
+          name:"Build a Full Stack AI-Powered Web App with ChatGPT API"
+        },{
+          url:"https://www.youtube.com/embed/rHux0gMZ3Eg", 
+          name:"Django Tutorial for Beginners – Build Powerful Backends"
+        },{
+          url:"https://www.youtube.com/embed/K5KVEU3aaeQ", 
+          name:"Python Full Course for Beginners [2025]"
+        },{
+          url:"", 
+          name:""
+        }
+      ]
+
+      const makeButtons = (arr) => {
+        arr.forEach( item => {
+          const link = "navigateToURL('"+ item.url +"')"
+          const child = document.createElement("INPUT");
+          child.setAttribute( "type", "button" );
+          child.setAttribute( "onclick", link );
+          child.setAttribute( "value", item.name );
+          document.getElementById("buttonHolder").appendChild(child);
+        })
+      }
+
+      const navigateToURL = (url) => {
+        document.getElementById("playerFrame").src = url;
+      }
+
+      const parseInput = () => {
+        const url = document.getElementById("userLink").value
+        navigateToURL("https://www.youtube.com/embed/"+ url.split('v=')[1])
+      }
+
+      const changeZoom = (val) => {
+        document.body.style.zoom = val
+        if (val=="100%") {
+          window.scrollTo(0, 100)
+        } else if (val=="200%") {
+          window.scrollTo(20, 170)
+        }
+      }
+
+      makeButtons(configButtons)
+      setTimeout(()=>{
+        window.scrollTo(0, 100)
+      }, 100)
+    </script>
+    
   </body>
 </html>

@@ -20,7 +20,7 @@
       #playerFrame {
         border: 10px solid green;
         width: 640px;
-        height: 390px;
+        height: 480px;
       }
       #userLink {
         width: 500px;
@@ -41,9 +41,10 @@
       <button onclick="changeZoom('200%')">z2</button>
     </div>
 
-    <iframe id="playerFrame" src="https://www.youtube.com/embed/d-VKYF4Zow0" ></iframe>
+    <iframe id="playerFrame" src="" ></iframe>
     <input id="userLink" type="text" />
     <!-- <button onclick="parseInput()">GO</button> -->
+    <button onclick="navigateToURL('https://www.youtube.com/embed/d-VKYF4Zow0')">GO</button>
     
     <div id="buttonHolder"></div>
     <div class="footer"></div>
@@ -79,10 +80,6 @@
         })
       }
 
-      const navigateToURL = (url) => {
-        document.getElementById("playerFrame").src = url;
-      }
-
       const parseInput = () => {
         const url = document.getElementById("userLink").value
         navigateToURL("https://www.youtube.com/embed/"+ url.split('v=')[1])
@@ -107,6 +104,11 @@
         alert('error = ' + err )
       }
       */
+
+
+      function navigateToURL(url) {
+        document.getElementById("playerFrame").src = url;
+      }
       
       function changeScroll(val) {
         $('html, body').animate({scrollTop: val}, 10);
@@ -115,9 +117,9 @@
       function changeZoom(val) {
         document.body.style.zoom = val
         if (val=="150%") {
-          changeScroll(200)
+          changeScroll(250)
         } else if (val=="200%") {
-          changeScroll(300)
+          changeScroll(350)
         }
       }
 

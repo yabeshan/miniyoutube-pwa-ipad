@@ -108,28 +108,23 @@
       }
       */
       
+      function changeScroll(val) {
+        $('html, body').animate({scrollTop: val}, 1);
+      }
 
       function changeZoom(val) {
-        alert('zoom = '+ val)
-        // document.body.style.zoom = val
-        // if (val=="100%") {
-        //   // window.scrollTo(0, 100)
-        // } else if (val=="200%") {
-        //   // window.scrollTo(20, 170)
-        // }
+        document.body.style.zoom = val
+        if (val=="100%") {
+          changeScroll(100)
+        } else if (val=="200%") {
+          changeScroll(160)
+        }
       }
 
       window.onload = function(){
-        // alert('onload')
-        // document.body.scrollTop = 100;
-        // window.focus();
-        // window.scrollTo(100, 150)
-        // $('body').scrollTo(200);
-        document.body.style.zoom = "200%" 
-        $('html, body').animate({scrollTop: 100}, 1);
+        changeZoom("200%")
+        changeScroll(100)
       };
-      
-
       
     </script>
     

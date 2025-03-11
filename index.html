@@ -37,11 +37,11 @@
   <body>
     <div class="header">12345 6789</div>
     <div>
-      <button onclick="changeZoom('100%')">z1</button>
+      <button onclick="changeZoom('150%')">z1</button>
       <button onclick="changeZoom('200%')">z2</button>
     </div>
 
-    <iframe id="playerFrame" src="" ></iframe>
+    <iframe id="playerFrame" src="https://www.youtube.com/embed/d-VKYF4Zow0" ></iframe>
     <input id="userLink" type="text" />
     <!-- <button onclick="parseInput()">GO</button> -->
     
@@ -114,7 +114,7 @@
 
       function changeZoom(val) {
         document.body.style.zoom = val
-        if (val=="100%") {
+        if (val=="150%") {
           changeScroll(200)
         } else if (val=="200%") {
           changeScroll(300)

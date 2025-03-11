@@ -15,6 +15,7 @@
       }
       .header {
         height: 100px;
+        color: aqua;
       }
       #playerFrame {
         border: 10px solid green;
@@ -33,20 +34,21 @@
     </style>
   </head>
   <body>
-    <div class="header"></div>
+    <div class="header">1</div>
     <div>
-      <button onclick="changeZoom('100%')">z1</button>
-      <button onclick="changeZoom('200%')">z2</button>
+      <!-- <button onclick="changeZoom('100%')">z1</button>
+      <button onclick="changeZoom('200%')">z2</button> -->
     </div>
 
     <iframe id="playerFrame" src="" ></iframe>
     <input id="userLink" type="text" />
-    <button onclick="parseInput()">GO</button>
+    <!-- <button onclick="parseInput()">GO</button> -->
     
     <div id="buttonHolder"></div>
     <div class="footer"></div>
 
     <script>
+      /*
       const configButtons = [{
           url:"https://www.youtube.com/embed/d-VKYF4Zow0", 
           name:"Build and Deploy a RAG Chatbot with JavaScript, LangChain.js, Next.js, Vercel, OpenAI"
@@ -95,9 +97,21 @@
       }
 
       makeButtons(configButtons)
-      setTimeout(()=>{
-        window.scrollTo(0, 100)
-      }, 100)
+      */
+      
+      
+
+      try {
+        setTimeout(()=>{
+          changeZoom('100%')
+          window.scrollTo(0, 100)
+        }, 100)
+
+        alert('finish', 'ok')
+      } catch (err) {
+        alert('error', err)
+      }
+      
     </script>
     
   </body>

@@ -34,7 +34,7 @@
     </style>
   </head>
   <body>
-    <div class="header">12345 67</div>
+    <div class="header">12345 678</div>
     <div>
       <!-- <button onclick="changeZoom('100%')">z1</button>
       <button onclick="changeZoom('200%')">z2</button> -->
@@ -102,11 +102,13 @@
       
 
       try {
-        setTimeout(()=>{
-          alert('timer')
+        // setTimeout(()=>{
+        //   alert('timer')
         //   // changeZoom('100%')
         //   window.scrollTo(0, 100)
-        }, "100")
+        // }, "100")
+        document.body.style.zoom = '200%'
+        window.scrollTo(50, 100)
         alert('finish')
       } catch (err) {
         alert('error = ' + err )

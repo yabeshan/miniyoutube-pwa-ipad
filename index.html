@@ -109,13 +109,14 @@
       */
       
 
-      const changeZoom = (val) => {
-        document.body.style.zoom = val
-        if (val=="100%") {
-          // window.scrollTo(0, 100)
-        } else if (val=="200%") {
-          // window.scrollTo(20, 170)
-        }
+      function changeZoom(val) {
+        alert('zoom = '+ val)
+        // document.body.style.zoom = val
+        // if (val=="100%") {
+        //   // window.scrollTo(0, 100)
+        // } else if (val=="200%") {
+        //   // window.scrollTo(20, 170)
+        // }
       }
 
       window.onload = function(){

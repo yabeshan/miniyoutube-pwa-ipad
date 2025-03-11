@@ -8,7 +8,7 @@
         padding: 0px;
         margin: 0px;
       }
-      input {
+      input, button {
         color: black; 
         width: 100%; 
         text-align: 'right'; 
@@ -20,12 +20,12 @@
         color: aqua;
       }
       #playerFrame {
-        /* border: 3px solid green; */
+        border: 0px solid;
         width: 640px;
         height: 520px;
       }
       #userLink {
-        width: 500px;
+        width: 400px;
         margin-top: 20px;
         margin-bottom: 20px;
       }
@@ -45,8 +45,24 @@
 
     <iframe id="playerFrame" src="" ></iframe>
     <input id="userLink" type="text" />
-    <button onclick="parseInput()">GO</button>
+    <button onclick="parseInput()" style="width:40px">GO</button>
     
+    <button onclick="navigateToURL('https://www.youtube.com/embed/d-VKYF4Zow0')">
+      Build and Deploy a RAG Chatbot with JavaScript, LangChain.js, Next.js, Vercel, OpenAI
+    </button>
+    <button onclick="navigateToURL('https://www.youtube.com/embed/b-JFDTZ5e1U')">
+      Build a Full Stack AI-Powered Web App with ChatGPT API
+    </button>
+    <button onclick="navigateToURL('https://www.youtube.com/embed/rHux0gMZ3Eg')">
+      Django Tutorial for Beginners – Build Powerful Backends
+    </button>
+    <button onclick="navigateToURL('https://www.youtube.com/embed/K5KVEU3aaeQ')">
+      Python Full Course for Beginners [2025]
+    </button>
+    <button onclick="navigateToURL('')">
+      
+    </button>
+
     <div id="buttonHolder"></div>
     <div class="footer"></div>
 

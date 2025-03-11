@@ -21,8 +21,9 @@
       }
       #playerFrame {
         border: 0px solid;
+        background-color: black;
         width: 640px;
-        height: 520px;
+        height: 540px;
       }
       #userLink {
         width: 400px;
@@ -38,10 +39,10 @@
   </head>
   <body>
     <div class="header"></div>
-    <!-- <div>
+    <div>
       <button onclick="changeZoom('150%')">z1</button>
       <button onclick="changeZoom('200%')">z2</button>
-    </div> -->
+    </div>
 
     <iframe id="playerFrame" src="" ></iframe>
     <input id="userLink" type="text" />
@@ -101,12 +102,12 @@
       function parseInput() {
         const url = document.getElementById("userLink").value
         navigateToURL(
-          "https://www.youtube.com/embed/"+ url.split('v=')[1] +"?enablejsapi=1&origin=http://example.com"
+          "https://www.youtube.com/embed/"+ url.split('v=')[1]
         )
       }
 
       function navigateToURL(url) {
-        document.getElementById("playerFrame").src = url;
+        document.getElementById("playerFrame").src = url+"?controls=1&enablejsapi=1&disablekb=0";
       }
       
       function changeScroll(val) {
@@ -114,7 +115,8 @@
       }
 
       function changeZoom(val) {
-        document.body.style.zoom = val
+        alert('zoom = ' + document.body.style.zoom )
+        // document.body.style.zoom = val
         // if (val=="150%") {
         //   changeScroll(250)
         // } else if (val=="200%") {

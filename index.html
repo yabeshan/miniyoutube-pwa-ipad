@@ -5,6 +5,8 @@
     <style>
       body {
         background-color: #666666;
+        padding: 0px;
+        margin: 0px;
       }
       input {
         color: black; 
@@ -18,7 +20,7 @@
         color: aqua;
       }
       #playerFrame {
-        border: 10px solid green;
+        border: 3px solid green;
         width: 640px;
         height: 480px;
       }
@@ -43,8 +45,7 @@
 
     <iframe id="playerFrame" src="" ></iframe>
     <input id="userLink" type="text" />
-    <!-- <button onclick="parseInput()">GO</button> -->
-    <button onclick="navigateToURL('https://www.youtube.com/embed/d-VKYF4Zow0')">GO</button>
+    <button onclick="parseInput()">GO</button>
     
     <div id="buttonHolder"></div>
     <div class="footer"></div>
@@ -106,6 +107,14 @@
       */
 
 
+      function parseInput() {
+        const url = document.getElementById("userLink").value
+        alert("__nav__" + "https://www.youtube.com/embed/"+ url.split('v=')[1]  )
+        navigateToURL(
+          'https://www.youtube.com/embed/d-VKYF4Zow0?enablejsapi=1&origin=http://example.com'
+        )
+      }
+
       function navigateToURL(url) {
         document.getElementById("playerFrame").src = url;
       }
@@ -124,7 +133,7 @@
       }
 
       window.onload = function(){
-        changeZoom("200%")
+        // changeZoom("200%")
       };
       
     </script>

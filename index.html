@@ -14,7 +14,7 @@
         margin:3px;
       }
       .header {
-        height: 100px;
+        height: 200px;
         color: aqua;
       }
       #playerFrame {
@@ -109,21 +109,20 @@
       */
       
       function changeScroll(val) {
-        $('html, body').animate({scrollTop: val}, 1);
+        $('html, body').animate({scrollTop: val}, 10);
       }
 
       function changeZoom(val) {
         document.body.style.zoom = val
         if (val=="100%") {
-          changeScroll(100)
+          changeScroll(200)
         } else if (val=="200%") {
-          changeScroll(160)
+          changeScroll(300)
         }
       }
 
       window.onload = function(){
         changeZoom("200%")
-        changeScroll(100)
       };
       
     </script>
